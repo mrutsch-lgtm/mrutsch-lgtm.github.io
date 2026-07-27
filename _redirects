@@ -1,0 +1,29 @@
+# alte Wix-Pfade und Umlaut-Routen -> neue Ziele (301)
+/arbeitnehmer%C3%BCberlassung  /arbeitnehmerueberlassung  301
+/arbeitnehmerüberlassung  /arbeitnehmerueberlassung  301
+/pädagogischesicherheit  /paedagogische-sicherheit  301
+/p%C3%A4dagogischesicherheit  /paedagogische-sicherheit  301
+/aufschließdienste-verschlussdienste  /aufschliessdienste-verschlussdienste  301
+/aufschlie%C3%9Fdienste-verschlussdienste  /aufschliessdienste-verschlussdienste  301
+# Wix-Altlasten ersatzlos -> Startseite
+/kopie-von-objektschutz  /objektschutz  301
+/kopie-von-unternehmen-1  /unternehmen  301
+/kopie-von-neuigkeiten  /  301
+/landing  /  301
+/blog  /  301
+/news  /  301
+/angebotsformular  /kontakt  301
+/inquiry-services-page  /kontakt  301
+/datenschutz-bewerber  /datenschutz  301
+# --- ergaenzt 27.07.2026 nach Auswertung der Search Console (Property https://www.staffsec.de/) ---
+# Diese drei Adressen ranken heute noch (Impressionen), haetten auf der neuen Seite aber 404 geliefert.
+/brandschutz                        /brandwachen                     301
+/category/all-products              /                                301
+/category/*                         /                                301
+/product-page/*                     /                                301
+
+# --- aus der Search Console: URLs, die Google heute noch abruft und die 404 liefern (27.07.2026) ---
+/revierdienste                      /revierdienste-interventionsdienste   301
+/sicherheitsdienstleistungen        /                                     301
+/ladendetektive                     /diebstahlschutz                      301
+/paedagogischesicherheit            /paedagogische-sicherheit             301

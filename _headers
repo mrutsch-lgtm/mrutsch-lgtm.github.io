@@ -1,0 +1,19 @@
+# Cloudflare-Pages-Header. Reihenfolge beachten: /* zuerst, danach die spezifischen
+# Regeln - bei doppelt gesetzten Headern gewinnt die LETZTE zutreffende Regel.
+
+/*
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  X-Frame-Options: SAMEORIGIN
+  Permissions-Policy: geolocation=(), microphone=(), camera=()
+  Cache-Control: public, max-age=0, must-revalidate
+
+# Dateien mit Hash im Namen bzw. unveraenderliche Medien: ein Jahr cachen
+/assets/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/fonts/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/generate/*
+  Cache-Control: public, max-age=31536000, immutable
