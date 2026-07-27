@@ -171,95 +171,9 @@
 
 
 
-/* === NACHTRAG 5 STAFFSEC 27.07.2026 - Nachweise und Referenzen === */
-.ssx-vt{position:relative;z-index:20;padding:88px 0 92px;background:#F8F7F4;border-top:1px solid #EDEAE3}
-.ssx-vt-innen{max-width:80rem;margin:0 auto;padding:0 16px}
-.ssx-vt-kopf{max-width:46rem;margin-bottom:38px}
-.ssx-vt-label{display:block;font-size:11px;font-weight:700;letter-spacing:.25em;text-transform:uppercase;color:#856D3E;margin-bottom:12px}
-.ssx-vt-h2{font-size:clamp(1.65rem,3vw,2.6rem);line-height:1.1;font-weight:900;letter-spacing:-.02em;color:#2D3436;margin:0 0 14px}
-.ssx-vt-text{font-size:16px;line-height:1.8;color:#6B7280;margin:0}
-.ssx-vt-karten{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin-bottom:46px}
-.ssx-vt-karte{display:flex;flex-direction:column;gap:12px;padding:20px 18px;background:#fff;border:1px solid #E8E5DE;border-radius:16px;transition:border-color .3s,box-shadow .3s,transform .3s}
-.ssx-vt-karte:hover{border-color:rgb(196 176 140 / .45);box-shadow:0 8px 30px rgb(45 52 54 / .06);transform:translateY(-2px)}
-.ssx-vt-bild{width:46px;height:46px;object-fit:contain}
-.ssx-vt-karte strong{display:block;font-size:14.5px;font-weight:800;color:#2D3436;margin-bottom:5px}
-.ssx-vt-karte span{display:block;font-size:12.5px;line-height:1.6;color:#6B6B6B}
-.ssx-vt-ref{border-top:1px solid #E8E5DE;padding-top:30px}
-.ssx-vt-reflabel{display:block;font-size:11px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:#856D3E;margin-bottom:20px}
-.ssx-vt-logos{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}
-.ssx-vt-logo{display:flex;align-items:center;justify-content:center;height:84px;padding:14px;background:#FAFAF8;border:1px solid #E8E5DE;border-radius:14px;transition:border-color .4s}
-.ssx-vt-logo:hover{border-color:rgb(196 176 140 / .4)}
-.ssx-vt-logo img{max-width:112px;max-height:44px;object-fit:contain;opacity:.68;transition:opacity .4s}
-.ssx-vt-logo:hover img{opacity:.85}
-@media (max-width:1023px){
-  .ssx-vt{padding:64px 0 68px}
-  .ssx-vt-karten{grid-template-columns:repeat(2,1fr)}
-  .ssx-vt-logos{grid-template-columns:repeat(3,1fr)}
-}
-@media (max-width:560px){
-  .ssx-vt-karten{grid-template-columns:1fr}
-  .ssx-vt-logos{grid-template-columns:repeat(2,1fr)}
-  .ssx-vt-logo{height:74px}
-}
-/* === ENDE NACHTRAG 5 === */
 
 
-/* === NACHTRAG 4 STAFFSEC 27.07.2026 - Lesbarkeit === */
-/* Knopfschrift und Logo-Deckkraft stehen seit 27.07. abends direkt in ihren
-   Basisregeln (.btn-primary, .ssx-vt-logo img) - Befund von Claude Design: zwei
-   Wahrheiten in einer Datei. Die Zeilen hier waren dadurch ueberfluessig. */
-/* weisse Schrift auf goldenem Knopf war 2,39:1 (113 Seiten) -> dunkle Schrift = 5,8:1 */
-/* 11-px-Goldlabels auf Weiss waren 2,54-2,72:1 (182 Stellen) -> dunkleres Gold = 4,9:1.
-   Die dunkle Variante der Labels nutzt #C4B08C und bleibt unangetastet. */
-[class~="text-[#B09A72]"]{color:#856D3E}
-/* Kleintext-Graustufen auf Weiss: 2,93:1 bzw. 4,23:1 -> 5,3:1 */
-[class~="text-[#9B9690]"]{color:#6F6A64}
-[class~="text-[#7B7B7B]"]{color:#6B6B6B}
-/* Kopfzeilen-Navigation ueber mittelhellen Fotos: /70 war 3,3-4,5:1.
-   ACHTUNG: Tailwind hat im Bundle nur Deckkraefte bis /70 kompiliert - /90 gab es nicht,
-   die Menuepunkte erbten dadurch die dunkle Grundfarbe (dunkel auf dunklem Hero).
-   Genau der Fehler aus L-108, hier in eigener Sache. Regel deshalb hier nachgetragen. */
-[class~="text-white/90"]{color:rgb(255 255 255 / .9)}
-/* Auch mit 90 % Weiss bleibt die Navigation über den hellsten Hero-Fotos unter 4,5:1
-   (gemessen 3,3-4,5:1 auf /objektschutz, /staplerfahrer, Branchenseiten). Statt die Schrift
-   weiter aufzuhellen bekommt die durchsichtige Kopfzeile einen dezenten dunklen Verlauf -
-   er ist über dunklen Fotos praktisch unsichtbar und rettet die hellen. */
-header[class*="bg-transparent"]{isolation:isolate}
-header[class*="bg-transparent"]::before{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;
-  background:linear-gradient(180deg, rgb(8 10 14 / .62) 0%, rgb(8 10 14 / .38) 55%, rgb(8 10 14 / 0) 100%)}
-/* === ENDE NACHTRAG 4 === */
 
-/* === NACHTRAG 2 STAFFSEC 27.07.2026 - Standorte-Menue === */
-.ssx-menue-standorte{padding:0;min-width:0;width:900px;overflow:hidden}
-.ssx-standorte{position:relative;display:flex;min-height:566px}
-.ssx-laender{width:298px;flex:0 0 298px;border-right:1px solid #E8E5DE;padding:14px 0;background:#fff}
-.ssx-gruppe{font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#B09A72;padding:0 22px 7px}
-.ssx-gruppe-zwei{padding-top:13px;margin-top:9px;border-top:1px solid #F1EFEA}
-.ssx-land{position:static}
-.ssx-land-titel{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:5px 22px;font-size:13.5px;color:#4B5563;text-decoration:none;transition:background .15s,color .15s}
-.ssx-land:hover>.ssx-land-titel,.ssx-land:focus-within>.ssx-land-titel{background:#F8F7F4;color:#2D3436;font-weight:600}
-.ssx-pfeil{color:#C4B08C;font-size:15px;line-height:1;opacity:0;transition:opacity .15s,transform .15s;transform:translateX(-3px)}
-.ssx-land:hover .ssx-pfeil,.ssx-land:focus-within .ssx-pfeil{opacity:1;transform:translateX(0)}
-.ssx-staedte{display:none;position:absolute;top:0;left:298px;right:0;bottom:0;background:#fff;padding:22px 26px 20px;z-index:2}
-.ssx-land:hover>.ssx-staedte,.ssx-land:focus-within>.ssx-staedte{display:flex;flex-direction:column}
-.ssx-staedte-kopf{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;padding-bottom:10px;margin-bottom:14px;border-bottom:1px solid #E8E5DE}
-.ssx-staedte-name{font-size:15px;font-weight:800;color:#2D3436;letter-spacing:-.01em}
-.ssx-staedte-rolle{font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:#8A7345}
-.ssx-staedte-liste{display:grid;grid-template-columns:1fr 1fr;gap:2px 18px;align-content:start;flex:1 1 auto;overflow-y:auto}
-.ssx-stadt{display:block;padding:5px 8px;font-size:13px;color:#6B7280;text-decoration:none;border-radius:6px;transition:background .12s,color .12s}
-.ssx-stadt:hover{background:#F8F7F4;color:#2D3436}
-.ssx-staedte-hinweis{font-size:13px;line-height:1.6;color:#6B7280;max-width:46ch;flex:1 1 auto}
-.ssx-staedte-alle{display:inline-block;margin-top:14px;font-size:12.5px;font-weight:700;color:#8A7345;text-decoration:none}
-.ssx-staedte-alle:hover{color:#2D3436}
-.ssx-standard{position:absolute;top:0;left:298px;right:0;bottom:0;padding:22px 26px;display:flex;flex-direction:column;background:#fff;z-index:1}
-.ssx-standard-kopf{font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#B09A72;margin-bottom:14px}
-.ssx-standard-liste{display:flex;flex-direction:column;gap:10px}
-.ssx-standard-karte{display:flex;flex-direction:column;gap:2px;padding:12px 14px;border:1px solid #E8E5DE;border-radius:10px;text-decoration:none;transition:border-color .15s,background .15s}
-.ssx-standard-karte:hover{border-color:rgb(196 176 140 / .55);background:#F8F7F4}
-.ssx-standard-karte strong{font-size:14px;color:#2D3436}
-.ssx-standard-karte span{font-size:12px;color:#6B7280}
-.ssx-standard-fuss{margin-top:auto;font-size:12px;color:#9AA0A6;line-height:1.5}
-/* === ENDE NACHTRAG 2 === */
 
 /* === NACHTRAG 3 STAFFSEC 27.07.2026 - Startseite Standorte === */
 .ssx-hd{position:relative;display:grid;grid-template-columns:352px 1fr;gap:30px;min-height:486px}
@@ -349,22 +263,28 @@ header nav > div.relative > div::before{content:"";position:absolute;left:0;righ
 @media (max-width:1023px){.ssx-zitat-aktion{justify-content:center}}
 /* === ENDE NACHTRAG 10 === */
 
+
+
 /* === NACHTRAG 9 STAFFSEC 27.07.2026 - Abstaende, zentrierte Nachweise, Logoband === */
 
-/* (a) Abstand zwischen den Abschnitten: Handy zuerst */
-section[class~="py-20"]{padding-top:56px;padding-bottom:56px}
-section[class~="py-24"]{padding-top:64px;padding-bottom:64px}
-section[class~="py-28"]{padding-top:72px;padding-bottom:72px}
-section[class~="py-32"]{padding-top:80px;padding-bottom:80px}
+/* (a) Abstand zwischen den Abschnitten - MITWACHSEND statt in Stufen.
+   Erste Fassung setzte feste Werte (56/64/72/80 auf dem Handy, 88-112 ab 1024 px). Claude Design
+   hat am 28.07. den Kern benannt: die Vorlage hatte py-28/32/36/44 auf JEDER Breite, und das ist
+   die Hauptursache der 18.841 px Handy-Hoehe. clamp() loest beides in einer Regel - unten so
+   knapp wie noetig, oben so ruhig wie vorher. Werte aus seiner Spezifikation, Abschnitt 3. */
+section[class~="py-20"],
+section[class~="py-24"],
+section[class~="py-28"]{padding-block:clamp(64px,6.6vw,88px)}
+section[class~="py-32"]{padding-block:clamp(72px,7.4vw,96px)}
+/* Tailwinds lg:-Regeln stehen selbst in einer Media Query und wuerden sonst wieder greifen */
 @media (min-width:1024px){
-  section[class~="lg:py-32"]{padding-top:88px;padding-bottom:88px}
-  section[class~="lg:py-36"]{padding-top:96px;padding-bottom:96px}
-  section[class~="lg:py-40"]{padding-top:104px;padding-bottom:104px}
-  section[class~="lg:py-44"]{padding-top:112px;padding-bottom:112px}
+  section[class~="lg:py-32"],
+  section[class~="lg:py-36"]{padding-block:clamp(64px,6.6vw,88px)}
+  section[class~="lg:py-40"],
+  section[class~="lg:py-44"]{padding-block:clamp(72px,7.4vw,96px)}
 }
 /* der Nachweis-Block ist keine <section>, deshalb einzeln */
-.ssx-vt{padding:72px 0 76px}
-@media (max-width:1023px){.ssx-vt{padding:56px 0 60px}}
+.ssx-vt{padding-block:clamp(56px,7vw,88px) clamp(60px,7.2vw,92px);padding-left:0;padding-right:0}
 
 /* (b) Nachweise zentriert - Kopf, Karten und Siegel */
 .ssx-vt-kopf{margin-left:auto;margin-right:auto;text-align:center}
@@ -427,3 +347,157 @@ section[class~="py-32"]{padding-top:80px;padding-bottom:80px}
   .ssx-ap-knoepfe{justify-content:center}
 }
 /* === ENDE NACHTRAG 9 === */
+
+
+/* === NACHTRAG 4 STAFFSEC 27.07.2026 - Lesbarkeit === */
+/* weisse Schrift auf goldenem Knopf war 2,39:1 (113 Seiten) -> dunkle Schrift = 5,8:1 */
+[class~="btn-primary"]{color:#2D3436}
+[class~="btn-primary"]:hover{color:#2D3436}
+/* 11-px-Goldlabels auf Weiss waren 2,54-2,72:1 (182 Stellen) -> dunkleres Gold = 4,9:1.
+   Die dunkle Variante der Labels nutzt #C4B08C und bleibt unangetastet. */
+[class~="text-[#B09A72]"]{color:#856D3E}
+/* Kleintext-Graustufen auf Weiss: 2,93:1 bzw. 4,23:1 -> 5,3:1
+   NACHGEZOGEN 28.07.2026 auf die verbindlichen Tokens aus Claude Designs Spezifikation
+   (staffsec-design-tokens.md, Abschnitt 1 "Schriftfarben - verbindlich"). Meine ersten Werte
+   #6F6A64 / #6B6B6B waren kontrastmaessig in Ordnung, aber eigene Erfindungen - jetzt steht
+   ueberall dieselbe Farbe:
+     --text-koerper #5C6467 (6,4:1)  ersetzt #7B7B7B und #8B8B8B  - Fliesstext, Karten
+     --text-still   #6B7280 (4,8:1)  ersetzt #9B9690              - Bildunterschriften, Rollen
+   #8B8B8B hatte bisher gar keine Regel und lief mit 4,23:1 auf Weiss (13-px-Kennzahltext). */
+[class~="text-[#9B9690]"]{color:#6B7280}
+[class~="text-[#7B7B7B]"]{color:#5C6467}
+[class~="text-[#8B8B8B]"]{color:#5C6467}
+/* Platzhalter im Kontaktformular lief ebenfalls auf #9B9690 */
+[class~="placeholder-[#9B9690]"]::placeholder{color:#6B7280}
+[class~="placeholder-[#9B9690]"]::-moz-placeholder{color:#6B7280}
+/* Kopfzeilen-Navigation ueber mittelhellen Fotos: /70 war 3,3-4,5:1.
+   ACHTUNG: Tailwind hat im Bundle nur Deckkraefte bis /70 kompiliert - /90 gab es nicht,
+   die Menuepunkte erbten dadurch die dunkle Grundfarbe (dunkel auf dunklem Hero).
+   Genau der Fehler aus L-108, hier in eigener Sache. Regel deshalb hier nachgetragen. */
+[class~="text-white/90"]{color:rgb(255 255 255 / .9)}
+/* Auch mit 90 % Weiss bleibt die Navigation über den hellsten Hero-Fotos unter 4,5:1
+   (gemessen 3,3-4,5:1 auf /objektschutz, /staplerfahrer, Branchenseiten). Statt die Schrift
+   weiter aufzuhellen bekommt die durchsichtige Kopfzeile einen dezenten dunklen Verlauf -
+   er ist über dunklen Fotos praktisch unsichtbar und rettet die hellen. */
+header[class*="bg-transparent"]{isolation:isolate}
+header[class*="bg-transparent"]::before{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;
+  background:linear-gradient(180deg, rgb(8 10 14 / .62) 0%, rgb(8 10 14 / .38) 55%, rgb(8 10 14 / 0) 100%)}
+/* === ENDE NACHTRAG 4 === */
+
+/* === NACHTRAG 11 STAFFSEC 27.07.2026 - halbdurchsichtige weisse Texte === */
+/* NACHGEZOGEN 28.07.2026: meine erste Fassung setzte alles pauschal auf 60 % und deckte nur
+   /30, /35, /40 ab. Claude Designs Spezifikation (staffsec-design-tokens.md, Abschnitt 1) hat
+   drei abgestufte Tokens statt eines Wertes - die Abstufung bleibt damit erhalten, statt drei
+   Ebenen auf eine zu ziehen. Uebernommen mit seinen Werten und seiner Zuordnung:
+     --auf-dunkel-2  .78 (10,3:1)  Fliesstext auf Dunkel        <- white/45, /50
+     --auf-dunkel-3  .72 ( 9,1:1)  Karten-Text auf Dunkel       <- white/40
+     --auf-dunkel-4  .62 ( 6,6:1)  kleinste Beschriftung, Brotkrume <- white/25, /30, /35
+   Seine Regel dahinter: jede Deckkraft unter 50 % auf Dunkel wird ersetzt. Damit sind auch
+   /25 (3 Stellen) und /45 (9 Stellen) erfasst, die ich uebersehen hatte; /50 (35 Stellen) lag
+   knapp ueber 4,5:1 und wird trotzdem angehoben, weil es Fliesstext ist.
+   /60, /70, /90 bleiben unberuehrt - die liegen ohnehin darueber. */
+[class~="text-white/25"]{color:rgb(255 255 255 / .62)}
+[class~="text-white/30"]{color:rgb(255 255 255 / .62)}
+[class~="text-white/35"]{color:rgb(255 255 255 / .62)}
+[class~="text-white/40"]{color:rgb(255 255 255 / .72)}
+[class~="text-white/45"]{color:rgb(255 255 255 / .78)}
+[class~="text-white/50"]{color:rgb(255 255 255 / .78)}
+/* === ENDE NACHTRAG 11 === */
+
+/* === NACHTRAG 12 STAFFSEC 28.07.2026 - Branchen-Karten als Listenzeile auf dem Handy === */
+@media (max-width:639px){
+  /* Raster: Zeilen stehen dichter als Karten, sonst fressen 8 Luecken a 20 px die Ersparnis
+     teilweise wieder auf. :has() trifft nur genau dieses Raster - faellt die Unterstuetzung
+     aus, bleibt es bei gap-5, also 20 px. Kein Schaden, nur weniger Ersparnis. */
+  [class~="gap-5"]:has([class~="min-h-[280px]"]){gap:10px}
+  /* die Karte selbst: aus dem Bildfeld wird eine zweispaltige Zeile */
+  [class~="min-h-[280px]"]{
+    display:grid;grid-template-columns:88px 1fr;gap:14px;align-items:center;
+    min-height:0;height:auto;padding:10px;border-radius:18px;
+    background:#FAFAF8;border:1px solid #E8E5DE;overflow:hidden;
+  }
+  /* Vorschaubild links - raus aus der absoluten Lage, feste Kachel */
+  [class~="min-h-[280px]"] > img{
+    position:static;inset:auto;width:88px;height:88px;
+    border-radius:12px;object-fit:cover;
+  }
+  /* Verlauf und Hover-Rahmen sind auf hellem Grund sinnlos */
+  [class~="min-h-[280px]"] > div[class~="bg-gradient-to-t"]{display:none}
+  [class~="min-h-[280px]"] > div[class~="opacity-0"]{display:none}
+  /* Textblock rechts: aus absolut-unten wird normaler Fluss */
+  [class~="min-h-[280px]"] > div[class~="p-7"]{position:static;inset:auto;padding:0;min-width:0}
+  /* Schrift muss auf hellem Grund umgestellt werden - Titel war text-white,
+     Beschreibung text-white/40 (Nachtrag 11 macht daraus .72 Weiss) */
+  [class~="min-h-[280px]"] h3{color:#2D3436;font-size:16px;line-height:1.25;margin-bottom:4px}
+  [class~="min-h-[280px]"] p{color:#5C6467;font-size:13px;line-height:1.5;margin-bottom:0;
+    display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+  /* "Mehr erfahren" haengt an :hover - auf dem Handy gibt es kein Hover, es waere eine
+     dauerhaft unsichtbare Zeile, die Platz kostet */
+  [class~="min-h-[280px]"] div[class~="translate-y-4"]{display:none}
+}
+/* === ENDE NACHTRAG 12 === */
+
+
+/* === NACHTRAG 5 STAFFSEC 27.07.2026 - Nachweise und Referenzen === */
+.ssx-vt{position:relative;z-index:20;padding:88px 0 92px;background:#F8F7F4;border-top:1px solid #EDEAE3}
+.ssx-vt-innen{max-width:80rem;margin:0 auto;padding:0 16px}
+.ssx-vt-kopf{max-width:46rem;margin-bottom:38px}
+.ssx-vt-label{display:block;font-size:11px;font-weight:700;letter-spacing:.25em;text-transform:uppercase;color:#856D3E;margin-bottom:12px}
+.ssx-vt-h2{font-size:clamp(1.65rem,3vw,2.6rem);line-height:1.1;font-weight:900;letter-spacing:-.02em;color:#2D3436;margin:0 0 14px}
+.ssx-vt-text{font-size:16px;line-height:1.8;color:#6B7280;margin:0}
+.ssx-vt-karten{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin-bottom:46px}
+.ssx-vt-karte{display:flex;flex-direction:column;gap:12px;padding:20px 18px;background:#fff;border:1px solid #E8E5DE;border-radius:16px;transition:border-color .3s,box-shadow .3s,transform .3s}
+.ssx-vt-karte:hover{border-color:rgb(196 176 140 / .45);box-shadow:0 8px 30px rgb(45 52 54 / .06);transform:translateY(-2px)}
+.ssx-vt-bild{width:46px;height:46px;object-fit:contain}
+.ssx-vt-karte strong{display:block;font-size:14.5px;font-weight:800;color:#2D3436;margin-bottom:5px}
+.ssx-vt-karte span{display:block;font-size:12.5px;line-height:1.6;color:#5C6467}
+.ssx-vt-ref{border-top:1px solid #E8E5DE;padding-top:30px}
+.ssx-vt-reflabel{display:block;font-size:11px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:#856D3E;margin-bottom:20px}
+.ssx-vt-logos{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}
+.ssx-vt-logo{display:flex;align-items:center;justify-content:center;height:84px;padding:14px;background:#FAFAF8;border:1px solid #E8E5DE;border-radius:14px;transition:border-color .4s}
+.ssx-vt-logo:hover{border-color:rgb(196 176 140 / .4)}
+.ssx-vt-logo img{max-width:112px;max-height:44px;object-fit:contain;opacity:.45;transition:opacity .4s}
+.ssx-vt-logo:hover img{opacity:.85}
+@media (max-width:1023px){
+  .ssx-vt{padding:64px 0 68px}
+  .ssx-vt-karten{grid-template-columns:repeat(2,1fr)}
+  .ssx-vt-logos{grid-template-columns:repeat(3,1fr)}
+}
+@media (max-width:560px){
+  .ssx-vt-karten{grid-template-columns:1fr}
+  .ssx-vt-logos{grid-template-columns:repeat(2,1fr)}
+  .ssx-vt-logo{height:74px}
+}
+/* === ENDE NACHTRAG 5 === */
+
+/* === NACHTRAG 2 STAFFSEC 27.07.2026 - Standorte-Menue === */
+.ssx-menue-standorte{padding:0;min-width:0;width:900px;overflow:hidden}
+.ssx-standorte{position:relative;display:flex;min-height:566px}
+.ssx-laender{width:298px;flex:0 0 298px;border-right:1px solid #E8E5DE;padding:14px 0;background:#fff}
+.ssx-gruppe{font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#856D3E;padding:0 22px 7px}
+.ssx-gruppe-zwei{padding-top:13px;margin-top:9px;border-top:1px solid #F1EFEA}
+.ssx-land{position:static}
+.ssx-land-titel{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:5px 22px;font-size:13.5px;color:#4B5563;text-decoration:none;transition:background .15s,color .15s}
+.ssx-land:hover>.ssx-land-titel,.ssx-land:focus-within>.ssx-land-titel{background:#F8F7F4;color:#2D3436;font-weight:600}
+.ssx-pfeil{color:#C4B08C;font-size:15px;line-height:1;opacity:0;transition:opacity .15s,transform .15s;transform:translateX(-3px)}
+.ssx-land:hover .ssx-pfeil,.ssx-land:focus-within .ssx-pfeil{opacity:1;transform:translateX(0)}
+.ssx-staedte{display:none;position:absolute;top:0;left:298px;right:0;bottom:0;background:#fff;padding:22px 26px 20px;z-index:2}
+.ssx-land:hover>.ssx-staedte,.ssx-land:focus-within>.ssx-staedte{display:flex;flex-direction:column}
+.ssx-staedte-kopf{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;padding-bottom:10px;margin-bottom:14px;border-bottom:1px solid #E8E5DE}
+.ssx-staedte-name{font-size:15px;font-weight:800;color:#2D3436;letter-spacing:-.01em}
+.ssx-staedte-rolle{font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:#856D3E}
+.ssx-staedte-liste{display:grid;grid-template-columns:1fr 1fr;gap:2px 18px;align-content:start;flex:1 1 auto;overflow-y:auto}
+.ssx-stadt{display:block;padding:5px 8px;font-size:13px;color:#6B7280;text-decoration:none;border-radius:6px;transition:background .12s,color .12s}
+.ssx-stadt:hover{background:#F8F7F4;color:#2D3436}
+.ssx-staedte-hinweis{font-size:13px;line-height:1.6;color:#6B7280;max-width:46ch;flex:1 1 auto}
+.ssx-staedte-alle{display:inline-block;margin-top:14px;font-size:12.5px;font-weight:700;color:#856D3E;text-decoration:none}
+.ssx-staedte-alle:hover{color:#2D3436}
+.ssx-standard{position:absolute;top:0;left:298px;right:0;bottom:0;padding:22px 26px;display:flex;flex-direction:column;background:#fff;z-index:1}
+.ssx-standard-kopf{font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#856D3E;margin-bottom:14px}
+.ssx-standard-liste{display:flex;flex-direction:column;gap:10px}
+.ssx-standard-karte{display:flex;flex-direction:column;gap:2px;padding:12px 14px;border:1px solid #E8E5DE;border-radius:10px;text-decoration:none;transition:border-color .15s,background .15s}
+.ssx-standard-karte:hover{border-color:rgb(196 176 140 / .55);background:#F8F7F4}
+.ssx-standard-karte strong{font-size:14px;color:#2D3436}
+.ssx-standard-karte span{font-size:12px;color:#6B7280}
+.ssx-standard-fuss{margin-top:auto;font-size:12px;color:#6B7280;line-height:1.5}
+/* === ENDE NACHTRAG 2 === */
