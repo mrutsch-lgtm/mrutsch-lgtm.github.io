@@ -510,3 +510,12 @@ header[class*="bg-transparent"]::before{content:"";position:absolute;inset:0;z-i
 .ssx-standard-karte span{font-size:12px;color:#6B7280}
 .ssx-standard-fuss{margin-top:auto;font-size:12px;color:#6B7280;line-height:1.5}
 /* === ENDE NACHTRAG 2 === */
+
+/* UEBERSCHRIFTEN-ROLLEN, Claude Design 28.07.2026. Zwei Regeln statt sieben Muster.
+   Die Rolle steht als Attribut am h2 und kommt aus dem Feldnamen der Daten. Ein neuer
+   Abschnitt erklaert damit seine Rolle, statt sie ueber die Klassenkette zufaellig zu erben.
+   Die Tailwind-Groessenklassen bleiben im Markup stehen: faellt dieser Nachtrag weg, sehen
+   die Ueberschriften aus wie vorher (48 px) und nicht wie ungestylter Text.
+   Argument bleibt bei 48 - deshalb braucht "argument" keine eigene Regel. */
+[data-rolle="struktur"]{font-size:clamp(21px,2.4vw,28px) !important}
+[data-rolle="struktur-klein"]{font-size:clamp(20px,2.2vw,26px) !important}
