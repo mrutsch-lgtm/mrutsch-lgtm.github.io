@@ -375,8 +375,10 @@ section[class~="py-32"]{padding-block:clamp(72px,7.4vw,96px)}
 [class~="text-[#5C6467]"]{color:#5C6467}
 
 /* Platzhalter im Kontaktformular lief ebenfalls auf #9B9690 */
-[class~="placeholder-[#9B9690]"]::placeholder{color:#6B7280}
-[class~="placeholder-[#9B9690]"]::-moz-placeholder{color:#6B7280}
+
+
+[class~="placeholder-[#6B7280]"]::placeholder{color:#6B7280}
+[class~="placeholder-[#6B7280]"]::-moz-placeholder{color:#6B7280}
 /* Kopfzeilen-Navigation ueber mittelhellen Fotos: /70 war 3,3-4,5:1.
    ACHTUNG: Tailwind hat im Bundle nur Deckkraefte bis /70 kompiliert - /90 gab es nicht,
    die Menuepunkte erbten dadurch die dunkle Grundfarbe (dunkel auf dunklem Hero).
