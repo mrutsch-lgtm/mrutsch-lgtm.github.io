@@ -362,17 +362,18 @@ section[class~="py-32"]{padding-block:clamp(72px,7.4vw,96px)}
    #856D3E ist derselbe Ton, den acht .ssx-Regeln fuer Gold auf Hell fuehren.
    Gemessen: 4,94:1 auf Weiss, 4,72:1 auf Kartenflaeche, 4,61:1 auf hellem Abschnitt. */
 .group:hover [class~="group-hover:text-[#B09A72]"]{color:#856D3E}
-/* Kleintext-Graustufen auf Weiss: 2,93:1 bzw. 4,23:1 -> 5,3:1
-   NACHGEZOGEN 28.07.2026 auf die verbindlichen Tokens aus Claude Designs Spezifikation
-   (staffsec-design-tokens.md, Abschnitt 1 "Schriftfarben - verbindlich"). Meine ersten Werte
-   #6F6A64 / #6B6B6B waren kontrastmaessig in Ordnung, aber eigene Erfindungen - jetzt steht
-   ueberall dieselbe Farbe:
-     --text-koerper #5C6467 (6,4:1)  ersetzt #7B7B7B und #8B8B8B  - Fliesstext, Karten
-     --text-still   #6B7280 (4,8:1)  ersetzt #9B9690              - Bildunterschriften, Rollen
-   #8B8B8B hatte bisher gar keine Regel und lief mit 4,23:1 auf Weiss (13-px-Kennzahltext). */
-[class~="text-[#9B9690]"]{color:#6B7280}
-[class~="text-[#7B7B7B]"]{color:#5C6467}
-[class~="text-[#8B8B8B]"]{color:#5C6467}
+/* Kleintext-Graustufen: die drei Ueberschreibungen sind am 28.07.2026 entfallen, weil das
+   Markup jetzt die richtigen Namen traegt: text-[#5C6467] und text-[#6B7280]. Vorher rendete
+   text-[#7B7B7B] als #5C6467 - die Farbe stimmte, der Name log. 275 Stellen auf 86 Seiten. */
+
+
+/* SCHRITT 1 der Aufraeum-Reihenfolge (Claude Design, 28.07.2026): der NEUE Klassenname
+   braucht seine Regel, BEVOR das Markup ihn traegt. Tailwind kompiliert nur, was zur
+   Bauzeit im Quelltext stand - text-[#5C6467] gab es dort nie. Ohne diese Zeile faellt
+   die Farbe der 25 umbenannten Elemente still auf den geerbten Wert.
+   text-[#6B7280] braucht das nicht, seine Tailwind-Regel existiert (4891 Nutzungen). */
+[class~="text-[#5C6467]"]{color:#5C6467}
+
 /* Platzhalter im Kontaktformular lief ebenfalls auf #9B9690 */
 [class~="placeholder-[#9B9690]"]::placeholder{color:#6B7280}
 [class~="placeholder-[#9B9690]"]::-moz-placeholder{color:#6B7280}
